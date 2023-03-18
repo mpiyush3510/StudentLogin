@@ -28,7 +28,6 @@
             android:textStyle="bold"/>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="7dp"
@@ -38,12 +37,13 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EmailOrPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:textColor="@color/PrimaryColor"
                 android:textSize="19sp"
-                android:inputType="textEmailAddress|number" />
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -62,7 +62,7 @@
                 android:maxLines="1"
                 android:textColor="@color/PrimaryColor"
                 android:textSize="19sp"
-                android:inputType="textPassword|numberPassword" />
+                android:inputType="numberPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
