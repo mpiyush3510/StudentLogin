@@ -14,4 +14,7 @@
     <string name="password">Password</string>
     <string name="email_or_phone">Email or Phone</string>
     <string name="create_account">Create account</string>
+    <string name="user_data">User Data</string>
+    <string name="gender">Gender</string>
+    <string name="female">Female</string>
 </resources>

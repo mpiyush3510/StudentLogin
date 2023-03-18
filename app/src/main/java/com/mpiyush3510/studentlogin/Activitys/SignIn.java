@@ -26,7 +26,7 @@ ActivitySignInBinding binding;
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(SignIn.this, SignUp.class);
-                ShowToast("😁");
+                //ShowToast("😁");
                 startActivity(intent);
             }
         });

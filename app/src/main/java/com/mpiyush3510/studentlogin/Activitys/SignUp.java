@@ -6,10 +6,15 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.datepicker.MaterialDatePicker;
+import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.mpiyush3510.studentlogin.MainActivity;
+import com.mpiyush3510.studentlogin.Operations.ExportedData;
 import com.mpiyush3510.studentlogin.R;
 import com.mpiyush3510.studentlogin.databinding.ActivitySignUpBinding;
 
@@ -17,6 +22,7 @@ public class SignUp extends AppCompatActivity {
     ActivitySignUpBinding binding;
     String[] Designation={"Ceo","Admin","Technician","Developer","Engineer","Manager","Student"};
     ArrayAdapter<String> arrayAdapter;
+    MaterialDatePicker<Long> materialDatePicker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +34,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String item=parent.getItemAtPosition(position).toString();
-                ShowToast(item);
+                //ShowToast(item);
             }
         });
         Listeners();
@@ -39,7 +45,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(SignUp.this, SignIn.class);
-                ShowToast("😁");
+                //ShowToast("😁");
                 startActivity(intent);
             }
         });
@@ -49,10 +55,32 @@ public class SignUp extends AppCompatActivity {
                 if(isValidate()){
                     Intent intent=new Intent(SignUp.this, SignIn.class);
                     ShowToast("Successfully SignUp ✅");
-                    startActivity(intent);
+//                    startActivity(intent);
+                    exportData();
                 }
             }
         });
+
+        datePicker();
+        binding.CalImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                materialDatePicker.show(getSupportFragmentManager(),"Material Date Picker");
+                materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Long>() {
+                    @Override
+                    public void onPositiveButtonClick(Long selection) {
+                        binding.BirthDate.setText(materialDatePicker.getHeaderText());
+                    }
+                });
+            }
+        });
+    }
+
+    private void datePicker(){
+         materialDatePicker=MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Select Date")
+                .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                .build();
     }
     private boolean isValidate() {
         if (binding.FirstName.getText().toString().isEmpty()) {
@@ -85,6 +113,20 @@ public class SignUp extends AppCompatActivity {
         } else {
             return true;
         }
+    }
+
+    private void exportData(){
+        String Gender=((RadioButton)findViewById(binding.RDG.getCheckedRadioButtonId())).getText().toString();
+
+        Intent intent=new Intent(SignUp.this, ExportedData.class);
+        intent.putExtra("FName",binding.FirstName.getText().toString());
+        intent.putExtra("LName",binding.LastName.getText().toString());
+        intent.putExtra("Email",binding.Email.getText().toString());
+        intent.putExtra("PhoneNumber",binding.PhoneNumber.getText().toString());
+        intent.putExtra("BirthDate",binding.BirthDate.getText().toString());
+        intent.putExtra("Designation",binding.Designation.getText().toString());
+        intent.putExtra("Gender",Gender);
+        startActivity(intent);
     }
     private void ShowToast(String str){
         Toast.makeText(this, str, Toast.LENGTH_SHORT).show();

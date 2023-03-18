@@ -3,7 +3,9 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/croissant_one</item>
         <item>@font/droid_sans_mono</item>
+        <item>@font/marcellus_sc</item>
         <item>@font/mate_sc</item>
         <item>@font/overlock_sc</item>
+        <item>@font/ubuntu</item>
     </array>
 </resources>
