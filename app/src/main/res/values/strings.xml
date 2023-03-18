@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">StudentLogin</string>
+    <string name="student_sign_in">Student Sign in</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="birthdate">BirthDate</string>
+    <string name="male">Male</string>
+    <string name="designation">Designation</string>
+    <string name="sign_in">Sign In</string>
+    <string name="student_sign_up">Student Sign up</string>
+    <string name="sign_up">Sign up</string>
+    <string name="password">Password</string>
+    <string name="email_or_phone">Email or Phone</string>
+</resources>
