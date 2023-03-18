@@ -28,6 +28,7 @@
             android:textStyle="bold"/>
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/FirstName"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:textSize="19sp"
@@ -41,6 +42,7 @@
             android:background="@drawable/edit_text_cust"/>
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/LastName"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:textSize="19sp"
@@ -54,6 +56,7 @@
             android:background="@drawable/edit_text_cust"/>
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Email"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:textSize="19sp"
@@ -67,6 +70,7 @@
             android:background="@drawable/edit_text_cust"/>
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:textSize="19sp"
@@ -85,6 +89,7 @@
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/BirthDate"
                 android:layout_width="290dp"
                 android:layout_height="52dp"
                 android:textSize="19sp"
@@ -98,6 +103,7 @@
                 android:background="@drawable/edit_text_cust"/>
 
             <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/CalImg"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -114,6 +120,7 @@
             android:orientation="horizontal">
 
             <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/Male"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/PrimaryColor"
@@ -124,6 +131,7 @@
                 android:textSize="19sp"/>
 
             <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/Female"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/PrimaryColor"
@@ -134,21 +142,24 @@
                 android:textSize="19sp"/>
         </RadioGroup>
 
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            style="@style/Widget.AppCompat.Spinner.DropDown"
-            android:textSize="19sp"
-            android:textColor="@color/BackgroundText"
-            android:hint="@string/designation"
-            android:inputType="number"
-            android:textColorHint="@color/PrimaryColor"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/edit_text_cust"/>
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="52dp"
+           style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+           android:background="@color/BackgroundTf">
+           <AutoCompleteTextView
+               android:id="@+id/Designation"
+               android:layout_width="match_parent"
+               android:layout_height="52dp"
+               android:background="@color/BackgroundTf"
+               android:hint="@string/designation"
+               android:inputType="none"
+               android:text=""/>
+
+       </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/BtnSignUp"
             android:layout_width="160dp"
             android:layout_height="55dp"
             android:layout_margin="12dp"
@@ -157,6 +168,7 @@
             app:cornerRadius="11dp"/>
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/SignIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
