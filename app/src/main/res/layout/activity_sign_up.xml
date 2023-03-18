@@ -22,7 +22,8 @@
             android:layout_height="wrap_content"
             android:text="@string/student_sign_up"
             android:layout_margin="12dp"
-            android:textSize="27sp"
+            android:textSize="28sp"
+            android:fontFamily="@font/croissant_one"
             android:textColor="@color/PrimaryColor"
             android:textStyle="bold"/>
 
@@ -154,5 +155,16 @@
             android:text="@string/sign_up"
             android:textSize="18sp"
             app:cornerRadius="11dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:fontFamily="@font/mate_sc"
+            android:text="@string/sign_in"
+            android:textColor="@color/PrimaryColor"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
     </LinearLayout>
 </ScrollView>
